@@ -1,16 +1,18 @@
 import React from "react"
-import { Button, Text, View } from "react-native"
+import { Button, ScrollView, Text, View } from "react-native"
 import { styles } from "../styles"
-import { useNavigation } from "@react-navigation/native"
-import { addPointsToFirestore } from "../api/updatePoints"
+import ActionsList from "../components/ActionsList"
+import { data } from "../data"
 
 const ActionsScreen = () => {
-  const navigation = useNavigation()
   return (
-    <View style={styles.screen}>
-      <Text>ActionsScreen</Text>
-      <Button title="Test" onPress={() => addPointsToFirestore(0)} />
-    </View>
+    <ScrollView>
+      <ActionsList listValue={0.5} actions={data?.halfPointers} />
+      <ActionsList listValue={1} actions={data?.onePointers} />
+      <ActionsList listValue={2} actions={data?.twoPointers} />
+      <ActionsList listValue={3} actions={data?.threePointers} />
+      <ActionsList listValue={4} actions={data?.fourPointers} />
+    </ScrollView>
   )
 }
 

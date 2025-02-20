@@ -1,10 +1,17 @@
 import { View, Text } from "react-native"
 import React from "react"
+import CustomHeader from "./CustomHeader"
+import { styles } from "../styles"
 
-const MainLayout = () => {
+interface MainLayoutProps {
+  children: React.ReactNode
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <View>
-      <Text>MainLayout</Text>
+    <View style={styles.container}>
+      <CustomHeader />
+      <View style={styles.content}>{children}</View>
     </View>
   )
 }

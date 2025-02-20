@@ -7,7 +7,7 @@ export const addPointsToFirestore = async (points: number) => {
     const currentPoints = await getPoints()
     const docRef = doc(db, "data", "points")
     await updateDoc(docRef, { value: currentPoints + points })
-    console.log("Document written with ID:")
+    console.log("Points updated")
   } catch (e) {
     console.error(e)
   }
