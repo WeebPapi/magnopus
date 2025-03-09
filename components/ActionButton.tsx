@@ -13,11 +13,48 @@ import { addPointsToFirestore } from "../api/updatePoints"
 interface ActionButtonProps {
   label: string
   pointValue: number
+  type: "action" | "reward"
 }
 
-const ActionButton: React.FC<ActionButtonProps> = ({ label, pointValue }) => {
-  const colors = ["#fc721c", "#fcc81c", "#109e1c", "#1c5bfc", "#15cfbc"]
-  const rippleColors = ["#994612", "#b59014", "#095c10", "#0e2f82", "#0b6e64"]
+const ActionButton: React.FC<ActionButtonProps> = ({
+  label,
+  pointValue,
+  type,
+}) => {
+  const colors = [
+    "#fc721c",
+    "#fcc81c",
+    "#109e1c",
+    "#1c5bfc",
+    "#15cfbc",
+    "#fc721c",
+    "#fcc81c",
+    "#109e1c",
+    "#1c5bfc",
+    "#1c5bfc",
+    "#15cfbc",
+    "#fc721c",
+    "#fcc81c",
+    "#109e1c",
+    "#15cfbc",
+  ]
+  const rippleColors = [
+    "#994612",
+    "#b59014",
+    "#095c10",
+    "#0e2f82",
+    "#0b6e64",
+    "#994612",
+    "#b59014",
+    "#095c10",
+    "#0e2f82",
+    "#0b6e64",
+    "#994612",
+    "#b59014",
+    "#095c10",
+    "#0e2f82",
+    "#0b6e64",
+  ]
   return (
     <View>
       <Pressable
@@ -36,7 +73,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({ label, pointValue }) => {
           radius: 5,
         }}
         onPress={() => {
-          addPointsToFirestore(pointValue)
+          addPointsToFirestore(type === "action" ? pointValue : -pointValue)
         }}
       >
         <Text

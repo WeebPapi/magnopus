@@ -7,6 +7,11 @@ export type IAction = {
   pointsValue: number
 }
 
+export type IPrize = {
+  label: string
+  pointsCost: number
+}
+
 declare global {
   namespace ReactNavigation {
     interface RootParamList extends RootStackParamList {}

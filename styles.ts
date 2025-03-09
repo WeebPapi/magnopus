@@ -12,20 +12,18 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   screen: {
-    flex: 1,
+    // minHeight: "100%",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
-    minHeight: "100%",
   },
   header: {
-    flex: 1,
-    justifyContent: "flex-end",
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    height: 50,
+    justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "red",
-    height: 350,
-    fontSize: 34,
-
-    color: "black",
   },
   actionButton: {
     width: 110,

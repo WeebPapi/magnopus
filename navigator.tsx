@@ -6,6 +6,7 @@ import RedeemScreen from "./screens/RedeemScreen"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import Foundation from "@expo/vector-icons/Foundation"
 import AntDesign from "@expo/vector-icons/AntDesign"
+import MainLayout from "./components/MainLayout"
 
 const Tab = createBottomTabNavigator<RootStackParamList>()
 
@@ -15,9 +16,7 @@ export const TabNavigator = () => {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({ route }) => ({
-            headerStyle: {
-              height: 80,
-            },
+            headerShown: false,
             tabBarIcon: ({ color }) => {
               if (route.name === "Actions")
                 return (
@@ -29,6 +28,7 @@ export const TabNavigator = () => {
           })}
         >
           <Tab.Screen name="Actions" component={ActionsScreen} />
+
           <Tab.Screen name="Redeem" component={RedeemScreen} />
         </Tab.Navigator>
       </NavigationContainer>

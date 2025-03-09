@@ -1,12 +1,17 @@
-import { View, Text } from "react-native"
+import { ScrollView } from "react-native"
 import React from "react"
-import { styles } from "../styles"
+import RedemptionList from "../components/RedemptionList"
+import { prizesData } from "../data"
+import MainLayout from "../components/MainLayout"
 
 const RedeemScreen = () => {
   return (
-    <View style={styles.screen}>
-      <Text>RedeemScreen</Text>
-    </View>
+    <MainLayout>
+      <ScrollView>
+        <RedemptionList listValue={5} prizes={prizesData?.fivePointers} />
+        <RedemptionList listValue={10} prizes={prizesData?.tenPointers} />
+      </ScrollView>
+    </MainLayout>
   )
 }
 

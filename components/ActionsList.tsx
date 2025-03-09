@@ -36,6 +36,7 @@ const ActionsList: React.FC<ActionsListProps> = ({ listValue, actions }) => {
           <ActionButton
             label={action.label}
             pointValue={action.pointsValue}
+            type="action"
             key={action.label}
           />
         ))}

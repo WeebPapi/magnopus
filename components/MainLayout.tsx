@@ -1,7 +1,8 @@
-import { View, Text } from "react-native"
+import { View, Text, ScrollView } from "react-native"
 import React from "react"
 import CustomHeader from "./CustomHeader"
 import { styles } from "../styles"
+import { SafeAreaView } from "react-native-safe-area-context"
 
 interface MainLayoutProps {
   children: React.ReactNode
@@ -9,10 +10,10 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.screen}>
       <CustomHeader />
-      <View style={styles.content}>{children}</View>
-    </View>
+      {children}
+    </SafeAreaView>
   )
 }
 

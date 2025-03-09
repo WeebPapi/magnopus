@@ -1,4 +1,4 @@
-export const data = {
+export const actionsData = {
   halfPointers: [
     { label: "Brushed teeth", pointsValue: 0.5 },
     { label: "Resisted craving", pointsValue: 0.5 },
@@ -25,4 +25,9 @@ export const data = {
     { label: "Cleaned bathroom", pointsValue: 3 },
   ],
   fourPointers: [{ label: "Cleaned floor", pointsValue: 4 }],
+}
+
+export const prizesData = {
+  fivePointers: [{ label: "Rivals 1 hour", pointsCost: 5 }],
+  tenPointers: [{ label: "Unhealthy snack", pointsCost: 10 }],
 }
